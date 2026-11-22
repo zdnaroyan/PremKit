@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Header from '../components/Header.jsx'
+import { resolveEstimatedPrice } from '../data/prices.js'
 
 const DETAIL_TABS = [
   { key: 'SEJARAH', label: 'Sejarah' },
@@ -22,6 +23,7 @@ export default function JerseyDetail({ jerseys, clubs, onInspect }) {
   if (!kit) return null
 
   const club = kit.clubs || clubs.find((c) => c.id === kit.club_id) || {}
+  const estimatedPrice = resolveEstimatedPrice(kit, club.name)
 
   return (
     <div className="view-enter">
@@ -105,8 +107,8 @@ export default function JerseyDetail({ jerseys, clubs, onInspect }) {
                 <div className="spec-mini-val">{kit.kit_type}</div>
               </div>
               <div>
-                <div className="spec-mini-key">Mode Katalog</div>
-                <div className="spec-mini-val">Pameran · Non-Jual-Beli</div>
+                <div className="spec-mini-key">Perkiraan Harga</div>
+                <div className="spec-mini-val">{estimatedPrice}</div>
               </div>
             </div>
           )}

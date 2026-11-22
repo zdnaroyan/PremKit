@@ -2,16 +2,7 @@ import { ExternalLink } from 'lucide-react'
 import Header from '../components/Header.jsx'
 import { PL_LION_URL } from '../data/media.js'
 
-const REPOSITORIES = [
-  {
-    label: 'Frontend',
-    url: 'https://github.com/zdnaroyan/premkit-pwa.git',
-  },
-  {
-    label: 'Backend',
-    url: 'https://github.com/zdnaroyan/premkit-api.git',
-  },
-]
+const REPOSITORY_URL = 'https://github.com/zdnaroyan/PremKit.git'
 
 export default function About({ clubsCount, apiLive }) {
   return (
@@ -47,20 +38,18 @@ export default function About({ clubsCount, apiLive }) {
         <section className="about-section">
           <h2 className="about-section-label">Repositori GitHub</h2>
           <div className="about-rows">
-            {REPOSITORIES.map((repo) => (
-              <div key={repo.label} className="about-row about-row--link">
-                <span className="about-row-k">{repo.label}</span>
-                <a
-                  className="about-row-link"
-                  href={repo.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>{repo.url}</span>
-                  <ExternalLink size={13} strokeWidth={1.8} aria-hidden="true" />
-                </a>
-              </div>
-            ))}
+            <div className="about-row about-row--link">
+              <span className="about-row-k">Utama</span>
+              <a
+                className="about-row-link"
+                href={REPOSITORY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>{REPOSITORY_URL}</span>
+                <ExternalLink size={13} strokeWidth={1.8} aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </section>
 
