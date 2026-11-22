@@ -10,8 +10,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: { enabled: true },
-      includeAssets: ['images/*.png'],
+      includeAssets: ['icon-192.png', 'icon-512.png', 'images/*.png'],
       manifest: {
+        id: '/',
         name: 'PremKit — Arsip Jersey Klasik Premier League',
         short_name: 'PremKit',
         description: 'Katalog non-jual-beli jersey klasik terbaik dari 11 klub Premier League.',
@@ -21,8 +22,9 @@ export default defineConfig({
         background_color: '#FFFFFF',
         theme_color: '#FFFFFF',
         icons: [
-          { src: PL_LION_ICON, sizes: '192x192', type: 'image/png', purpose: 'any' },
-          { src: PL_LION_ICON, sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+          { src: '/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+          { src: PL_LION_ICON, sizes: '700x700', type: 'image/png', purpose: 'any' },
         ],
       },
       workbox: {

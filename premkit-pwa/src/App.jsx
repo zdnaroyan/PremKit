@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { fetchArchive } from './services/api.js'
 import BottomNav from './components/BottomNav.jsx'
 import Lightbox from './components/Lightbox.jsx'
+import LoadingScreen from './components/LoadingScreen.jsx'
+import AntigravityBackground from './components/AntigravityBackground.jsx'
 import Home from './pages/Home.jsx'
 import Jerseys from './pages/Jerseys.jsx'
 import JerseyDetail from './pages/JerseyDetail.jsx'
@@ -50,11 +52,10 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <div className="app-shell">
+        <AntigravityBackground />
         <main className="app-main">
           {loading ? (
-            <div className="empty-msg" style={{ paddingTop: '140px' }}>
-              Memuat arsip jersey klasik...
-            </div>
+            <LoadingScreen />
           ) : error ? (
             <div className="empty-msg" style={{ paddingTop: '120px' }}>
               <p style={{ marginBottom: '16px' }}>{error}</p>
@@ -86,7 +87,7 @@ export default function App() {
           )}
         </main>
 
-        <BottomNav />
+        {!loading && <BottomNav />}
       </div>
 
       <Lightbox image={lightboxImg} onClose={() => setLightboxImg(null)} />
