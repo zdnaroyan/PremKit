@@ -1,0 +1,32 @@
+:root {
+  --bg-canvas: #ffffff;
+  --bg-stone-light: #e7e4e0;
+  --bg-stone-mid: #b6b1ab;
+  --bg-stone-dark: #7d7975;
+  --ink-black: #111111;
+  --ink-muted: #7e7e7e;
+  --line-hairline: #ececec;
+  --line-border: #e5e5e5;
+  --font-display: 'Oswald', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--bg-canvas);
+  color: var(--ink-black);
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
